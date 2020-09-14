@@ -1,11 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useEffect } from 'react';
 import './App.scss';
-import { connect } from 'react-redux';
+import { observer, inject } from 'mobx-react'
 
-function App(props) {
-  const { users } = props;
-  const { requester = {} } = users;
+const App = ({ store }) => {
+  useEffect(() => { store.getRequester() }, [store]);
+
+  const { requester = {} } = store;
   return (
     <div className="App">
       <header className="App-header">
@@ -35,14 +35,4 @@ function App(props) {
   );
 }
 
-App.propTypes = {
-  users: PropTypes.object,
-};
-
-function mapStateToProps(state) {
-  return {
-    users: state.users,
-  };
-}
-
-export default connect(mapStateToProps)(App);
+export default inject(({ store }) => ({ store }))(observer(App));

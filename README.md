@@ -3,8 +3,7 @@
 ## Includes
 
 * React
-* Redux
-* Redux Thunk
+* MobX
 * Webpack
 * Babel
 * SASS compiler
