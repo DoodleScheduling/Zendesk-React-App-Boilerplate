@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   devtool: "inline-source-map",
@@ -56,5 +57,11 @@ module.exports = {
       template: "src/index.html",
       hash: true,
     }),
+    // Copy over static assets
+    new CopyWebpackPlugin({ patterns: [
+      { from: 'manifest.json', to: '../manifest.json' },
+      { from: 'src/translations', to: '../translations' },
+      { from: 'static', to: '../assets' }
+    ]})
   ],
 };

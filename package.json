@@ -25,6 +25,7 @@
 		"babel-jest": "^26.3.0",
 		"babel-loader": "^8.1.0",
 		"babel-preset-es2016": "^6.24.1",
+		"copy-webpack-plugin": "^6.1.0",
 		"css-loader": "^4.3.0",
 		"eslint": "^7.9.0",
 		"eslint-import-resolver-webpack": "^0.12.2",
