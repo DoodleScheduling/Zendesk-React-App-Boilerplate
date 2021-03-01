@@ -61,6 +61,7 @@ module.exports = {
     new CopyWebpackPlugin({ patterns: [
       { from: 'manifest.json', to: '../manifest.json' },
       { from: 'src/translations', to: '../translations' },
+      { from: '.zat', to: '../' },
       { from: 'static', to: '../assets' }
     ]})
   ],

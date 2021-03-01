@@ -3,8 +3,8 @@
 	"version": "2.0.0",
 	"description": "Boilerplate for making a Zendesk App with React.js and MobX ",
 	"scripts": {
-		"clean": "rimraf dist/tmp",
-		"build": "webpack --config webpack.prod.js -p",
+		"clean": "rimraf dist",
+		"build": "webpack --config webpack.prod.js --mode production",
 		"build-dev": "webpack --config webpack.dev.js",
 		"package": "npm-run-all clean && zat package --path ./dist",
 		"build:package": "npm-run-all build package",
