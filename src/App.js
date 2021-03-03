@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import './App.scss';
 import { observer, inject } from 'mobx-react'
+import Button from '@doodle/components/controls/Button/Button';
 
 const App = ({ store }) => {
   useEffect(() => { store.getRequester() }, [store]);
@@ -8,6 +9,7 @@ const App = ({ store }) => {
   const { requester = {} } = store;
   return (
     <div className="App">
+      <Button onClick={() => console.log('test')} variant="blue">lib-components Button</Button>
       <header className="App-header">
         <p className="Requester-name">Requesters name is {requester.name}.</p>
       </header>
